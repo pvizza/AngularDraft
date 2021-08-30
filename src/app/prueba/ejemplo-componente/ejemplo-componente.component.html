@@ -1,0 +1,39 @@
+{{ variable }}
+<label>
+  Property Binding
+  <input type="text" [value]="binding" />
+  <!--Property Binding-->
+  <p>{{ binding }}</p>
+</label>
+<label>
+  Two way Property Binding and event click
+  <input type="text" [(ngModel)]="twoBinding" />
+  <!-- Two way Property Binding-->
+  <button (click)="sendValue()">send value</button>
+  <!--Event click html-->
+  <span>{{ twoBinding }}</span>
+</label>
+<br />
+<label>
+  ng model change
+  <input (ngModelChange)="modelChange()" [(ngModel)]="ngmodel" />
+  <p>{{ ngmodel }}</p>
+</label>
+
+<br />
+<label>
+  input event
+  <input type="text" name="val" (input)="onChange($event)" />
+  <button (click)="enviar()">enviar</button>
+</label>
+
+<div *ngIf="cargando">
+  <p>mostrar mensaje</p>
+</div>
+<br />
+<button (click)="mostrar()">mostrar</button>
+
+<div
+  [class.addClass]="1 + 2 == 3"
+  [ngClass]="{ agregaClase: 1 + 2 == 3 }"
+></div>
